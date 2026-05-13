@@ -114,7 +114,7 @@ sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
 Busca la línea `bind-address = 127.0.0.1` y cámbiala por:
 
 ```
-bind-address = 192.168.107.2
+bind-address = 192.168.107.5
 ```
 
 Reinicia MariaDB:
@@ -141,19 +141,19 @@ CREATE DATABASE db_movies;
 ```
 
 ```sql
-CREATE USER 'usr_movies'@'192.168.107.4' IDENTIFIED BY 'secret';
-```
-
-```sql
 CREATE USER 'usr_movies'@'192.168.107.3' IDENTIFIED BY 'secret';
 ```
 
 ```sql
-GRANT ALL PRIVILEGES ON db_movies.* TO 'usr_movies'@'192.168.107.4';
+CREATE USER 'usr_movies'@'192.168.107.4' IDENTIFIED BY 'secret';
 ```
 
 ```sql
 GRANT ALL PRIVILEGES ON db_movies.* TO 'usr_movies'@'192.168.107.3';
+```
+
+```sql
+GRANT ALL PRIVILEGES ON db_movies.* TO 'usr_movies'@'192.168.107.4';
 ```
 
 ```sql
