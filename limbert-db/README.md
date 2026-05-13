@@ -1,9 +1,9 @@
 # 🗄️ Limbert — BASE DE DATOS
 
-**IP de tu VM:** `192.168.107.2`  
+**IP de tu VM:** `192.168.107.5`  
 **Rol:** Servidor de Base de Datos (MariaDB)
 
-> ⚠️ **Nota:** En la práctica grupal tu IP en la VLAN es `192.168.107.2`. Consulta la tabla de asignación de tu docente para confirmar.
+> ⚠️ **Nota:** En la práctica grupal tu IP en la VLAN es `192.168.107.5`. Consulta la tabla de asignación de tu docente para confirmar.
 
 ---
 
