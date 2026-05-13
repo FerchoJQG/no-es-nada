@@ -171,7 +171,7 @@ quit
 Conéctate con el nuevo usuario:
 
 ```bash
-mysql -u usr_movies -h 192.168.107.2 -p
+mysql -u usr_movies -h 192.168.107.5 -p
 ```
 
 Contraseña: `secret`
@@ -234,11 +234,11 @@ Configura las reglas para permitir MariaDB solo desde las Apps:
 sudo ufw allow ssh
 
 # Permitir MariaDB solo desde App 1 (Daner) y App 2 (Melany)
-sudo ufw allow from 192.168.107.4 to any port 3306
 sudo ufw allow from 192.168.107.3 to any port 3306
+sudo ufw allow from 192.168.107.4 to any port 3306
 
 # Permitir Node Exporter desde el Proxy (Fernando - monitoreo)
-sudo ufw allow from 192.168.107.2 to any port 9100
+sudo ufw allow from 192.168.107.5 to any port 9100
 
 # Activar UFW
 sudo ufw enable
@@ -273,7 +273,7 @@ curl http://localhost:9100/metrics | head -20
 sudo systemctl status mariadb
 
 # Puedes conectarte desde la misma VM
-mysql -u usr_movies -h 192.168.107.2 -p -e "USE db_movies; SELECT COUNT(*) FROM movies;"
+mysql -u usr_movies -h 192.168.107.5 -p -e "USE db_movies; SELECT COUNT(*) FROM movies;"
 
 # Node Exporter está corriendo
 sudo systemctl status prometheus-node-exporter
@@ -286,7 +286,7 @@ ss -tlnp | grep 3306
 
 ## 🔧 Solución de Problemas Comunes
 
-**Error: Can't connect to MySQL server on '192.168.107.2'**
+**Error: Can't connect to MySQL server on '192.168.107.5'**
 ```bash
 # Verifica que bind-address esté bien configurado
 grep bind-address /etc/mysql/mariadb.conf.d/50-server.cnf
