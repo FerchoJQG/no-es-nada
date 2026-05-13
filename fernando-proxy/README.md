@@ -168,25 +168,21 @@ Reemplaza la sección `scrape_configs` con esto:
 
 ```yaml
 scrape_configs:
-  - job_name: 'prometheus'
-    static_configs:
-      - targets: ['localhost:9090']
-
   - job_name: 'node-proxy'
     static_configs:
       - targets: ['192.168.107.2:9100']
 
   - job_name: 'node-app1'
     static_configs:
-      - targets: ['192.168.107.4:9100']
+      - targets: ['192.168.107.3:9100']
 
   - job_name: 'node-app2'
     static_configs:
-      - targets: ['192.168.107.3:9100']
+      - targets: ['192.168.107.4:9100']
 
   - job_name: 'node-db'
     static_configs:
-      - targets: ['192.168.107.2:9100']
+      - targets: ['192.168.107.5:9100']
 ```
 
 Reinicia Prometheus:
