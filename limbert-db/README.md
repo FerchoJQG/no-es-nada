@@ -36,18 +36,19 @@ network:
       optional: true
       addresses:
         - "192.168.100.176/24"
+      routes:
+        - to: default
+          via: 192.168.100.1
+      nameservers:
+        addresses:
+          - 8.8.8.8
   vlans:
     vlan107:
       id: 107
       link: ens18
       addresses:
-        - "192.168.107.2/29"
-      nameservers:
-        addresses:
-          - 8.8.8.8
-      routes:
-        - to: default
-          via: 192.168.107.1
+        - "192.168.107.5/29"
+
 ```
 
 ```bash
