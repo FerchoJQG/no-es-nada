@@ -146,7 +146,7 @@ Asegúrate de que el archivo tenga exactamente esto:
 
 ```env
 PORT=3000
-DB_HOST=192.168.107.2
+DB_HOST=192.168.107.5
 DB_USER=usr_movies
 DB_PASSWORD=secret
 DB_NAME=db_movies
@@ -173,7 +173,7 @@ Conexión a MariaDB exitosa. Pool creado y probado.
 
 Si aparece ese mensaje, todo está bien. Detén la app con `Ctrl+C`.
 
-Si hay error de conexión, verifica con Limbert que la DB esté lista.
+Si hay error de conexión, verifica con Limbert que la DB esté lista y que el usuario `usr_movies` tiene permisos desde `192.168.107.4`.
 
 ---
 
@@ -229,7 +229,7 @@ pm2 status
 curl http://localhost:3000/movies
 
 # La app responde desde la IP de la VLAN
-curl http://192.168.107.3:3000/movies
+curl http://192.168.107.4:3000/movies
 
 # Node Exporter está corriendo
 sudo systemctl status prometheus-node-exporter
